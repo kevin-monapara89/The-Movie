@@ -18,7 +18,7 @@ class UpcominMovie : Fragment() {
 
     var page = 1
     lateinit var binding: FragmentUpcominMovieBinding
-    var adapter = UpcominMovieAdapter()
+    var adapter = MovieAdapter()
     var movielist = ArrayList<ResultsItem>()
 
     override fun onCreateView(

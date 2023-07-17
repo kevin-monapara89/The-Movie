@@ -39,6 +39,7 @@
                     android:src="@drawable/img" />
 
                 </androidx.cardview.widget.CardView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,11 +59,58 @@
                     android:id="@+id/txtdescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:text="When his attempt to save his family inadvertently alters the future, Barry Allen becomes trapped in a reality in which General Zod has returned and there are no Super Heroes to turn to. In order to save the world that he is in and return to the future that he knows, Barry's only hope is to race for his life. But will making the ultimate sacrifice be enough to reset the universe?"
-                    android:textColor="#3f4f73"
+                    android:textColor="#46577E"
                     android:textSize="@dimen/_7sdp"
                     android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rateing  :"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp"/>
+
+                    <TextView
+                        android:id="@+id/txtrateing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="9.9"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:textColor="#f9d80f"
+                        android:textSize="@dimen/_9sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Popularity  :"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp"/>
+
+                    <TextView
+                        android:id="@+id/txtpopularity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10601.844"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:textColor="#1590e2"
+                        android:textSize="@dimen/_9sdp"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 

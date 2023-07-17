@@ -9,4 +9,8 @@ interface ApiInterface {
     @GET("upcoming")
     fun getupcoming(
         @Query ("page")page:Int) :Call<MovieModel>
+
+    @GET("popular")
+    fun getpopular(
+        @Query ("page")page:Int) :Call<MovieModel>
 }

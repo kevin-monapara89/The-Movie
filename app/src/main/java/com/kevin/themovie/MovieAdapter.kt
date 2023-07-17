@@ -2,16 +2,13 @@ package com.kevin.themovie
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.kevin.themovie.databinding.MovielistBinding
-import java.util.ArrayList
-import kotlin.collections.ArrayList as ArrayList1
 
-class UpcominMovieAdapter : RecyclerView.Adapter<UpcominMovieAdapter.UpcomingHolder>(){
+class MovieAdapter : RecyclerView.Adapter<MovieAdapter.UpcomingHolder>(){
 
     lateinit var context: Context
     lateinit var movielist: List<ResultsItem?>
@@ -35,6 +32,8 @@ class UpcominMovieAdapter : RecyclerView.Adapter<UpcominMovieAdapter.UpcomingHol
             movielist.get(position)?.apply {
                 txtmoviename.text = originalTitle
                 txtdescription.text = overview
+                txtrateing.text = voteAverage.toString()
+                txtpopularity.text = popularity.toString()
                 Glide.with(context).load(ApiClient.posterUrl+posterPath).into(imgposter)
             }
         }
