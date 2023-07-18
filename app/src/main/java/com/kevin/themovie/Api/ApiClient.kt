@@ -1,6 +1,5 @@
-package com.kevin.themovie
+package com.kevin.themovie.Api
 
-import okhttp3.Interceptor.Chain
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,7 +23,7 @@ class ApiClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(OkHttpClient().newBuilder().addInterceptor{Chain ->
                         val request = Chain.request().newBuilder()
-                            .addHeader("Authorization", "Bearer ${token}").build()
+                            .addHeader("Authorization", "Bearer $token").build()
                         Chain.proceed(request)
                     }.build())
                     .build()

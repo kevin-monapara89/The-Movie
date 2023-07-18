@@ -1,21 +1,22 @@
-package com.kevin.themovie
+package com.kevin.themovie.Activity
 
 import android.annotation.SuppressLint
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentPagerAdapter
+import com.kevin.themovie.Adapter.FragmentAdapter
+import com.kevin.themovie.Fragment.NowPlayingMovie
+import com.kevin.themovie.Fragment.PopularMovie
+import com.kevin.themovie.Fragment.TopRatedMovie
+import com.kevin.themovie.Fragment.UpcominMovie
 import com.kevin.themovie.databinding.ActivityMainBinding
-import com.kevin.themovie.databinding.FragmentUpcominMovieBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    var item = arrayOf("Upcoming","Popular")
-//    "Now Playing",,"Top Rated",
-    var fragments = arrayOf(UpcominMovie(), PopularMovie())
+    var item = arrayOf("Now Playing", "Popular", "Top Rated", "Upcoming")
+
+    var fragments = arrayOf(NowPlayingMovie(), PopularMovie(), TopRatedMovie(), UpcominMovie())
 
     @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,11 +32,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun initview() {
 
-        var manager: ConnectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        var manager: ConnectivityManager =
+            getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
 
         var networkInfo = manager.activeNetworkInfo
 
-        if(networkInfo != null && networkInfo.isAvailable) {
+        if (networkInfo != null && networkInfo.isAvailable) {
             binding.maincontent.isVisible = true
             binding.nointernet.isVisible = false
         } else {
@@ -43,9 +45,5 @@ class MainActivity : AppCompatActivity() {
             binding.maincontent.isVisible = false
         }
 
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.fragepage, fragment).commit()
     }
 }

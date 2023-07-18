@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/nested"
-    tools:context=".Fragment.PopularMovie">
+    tools:context=".Fragment.TopRatedMovie">
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/rcvpopular"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvtoprated"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.core.widget.NestedScrollView>

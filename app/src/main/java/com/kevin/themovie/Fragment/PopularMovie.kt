@@ -1,4 +1,4 @@
-package com.kevin.themovie
+package com.kevin.themovie.Fragment
 
 import android.content.ContentValues
 import android.os.Bundle
@@ -9,6 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kevin.themovie.Adapter.MovieAdapter
+import com.kevin.themovie.Api.ApiClient
+import com.kevin.themovie.Api.ApiInterface
+import com.kevin.themovie.Model.MovieModel
+import com.kevin.themovie.Model.ResultsItem
 import com.kevin.themovie.databinding.FragmentPopularMovieBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,13 +34,13 @@ class PopularMovie : Fragment() {
 
         binding.nested.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
             if (scrollY == v.getChildAt(0).measuredHeight - v.measuredHeight) {
-                page ++
+                page++
                 popularmovieAPI(page)
             }
         })
 
         popularmovieAPI(page)
-    return binding.root
+        return binding.root
     }
 
     private fun popularmovieAPI(page: Int) {
@@ -51,8 +56,9 @@ class PopularMovie : Fragment() {
                     binding.rcvpopular.adapter = adapter
                 }
             }
+
             override fun onFailure(call: Call<MovieModel>, t: Throwable) {
-                Log.e(ContentValues.TAG, "onFailure: ${t.message}", )
+                Log.e(ContentValues.TAG, "onFailure: ${t.message}")
             }
         })
     }

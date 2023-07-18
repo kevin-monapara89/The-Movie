@@ -1,12 +1,13 @@
-package com.kevin.themovie
+package com.kevin.themovie.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-open class FragmentAdapter (fm: FragmentManager, fragment: Array<Fragment>, item: Array<String>) : FragmentPagerAdapter(fm) {
+open class FragmentAdapter(fm: FragmentManager, fragment: Array<Fragment>, item: Array<String>) :
+    FragmentPagerAdapter(fm) {
 
-        var fragments = fragment
+    var fragments = fragment
     var item = item
 
     override fun getCount(): Int {
